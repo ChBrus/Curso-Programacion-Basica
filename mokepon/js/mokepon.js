@@ -11,7 +11,7 @@ function seleccionarMascotaJugador() {
     // Así no está en el curso, esto sé me ocurrió a mi XD
     mascotas.forEach(element => {
         if(element.checked) {
-            alert('Seleccionaste a ' + capitalizarPrimeraLetra(element.id));
+            //alert('Seleccionaste a ' + capitalizarPrimeraLetra(element.id));
             nombreMascotaJugador.innerHTML = capitalizarPrimeraLetra(element.id);
         } else {
             contador++;
@@ -28,6 +28,10 @@ function seleccionarMascotaJugador() {
 */
 function capitalizarPrimeraLetra(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 window.addEventListener('load', iniciarJuego);
