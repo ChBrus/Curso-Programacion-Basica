@@ -16,7 +16,7 @@ function seleccionarMascotaJugador() {
         }
     });
     if (contador == 3) {
-        alert('No has seleccionado ningún mokepon');
+        alert('Selecciona una mascota');
     }
 }
 
