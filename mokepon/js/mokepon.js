@@ -19,7 +19,31 @@ function seleccionarMascotaJugador() {
     });
     if (contador == 3) {
         alert('Selecciona una mascota');
+        return;
     }
+
+    seleccionarMascotaEnemigo();
+}
+
+function seleccionarMascotaEnemigo() {
+    let mascotaEnemigo = document.getElementById('mascota-enemigo');
+    let mascotaEnemigoAleatorio = aleatorio(1, 3);
+
+    switch (mascotaEnemigoAleatorio) {
+        case 1:
+            mascotaEnemigo.innerHTML = 'Hipodoge';
+        break;
+        case 2:
+            mascotaEnemigo.innerHTML = 'Capipepo';
+        break
+        case 3:
+            mascotaEnemigo.innerHTML = 'Ratigueya';
+        break;
+    }
+}
+
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /** 
@@ -28,10 +52,6 @@ function seleccionarMascotaJugador() {
 */
 function capitalizarPrimeraLetra(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function aleatorio(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 window.addEventListener('load', iniciarJuego);
