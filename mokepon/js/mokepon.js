@@ -82,6 +82,16 @@ function ataqueAleatorioEnemigo() {
             ataqueEnemigo = 'Tierra';
         break;
     }
+
+    crearMensaje();
+}
+
+function crearMensaje() {
+    let mensajes = document.getElementById('mensajes');
+    let parrafo = document.createElement('p');
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + '.\nLa mascota del enemigo atacó con ' + ataqueEnemigo + ".\n - PENDIENTE 🤔";
+
+    mensajes.appendChild(parrafo);
 }
 
 function aleatorio(min, max) {
