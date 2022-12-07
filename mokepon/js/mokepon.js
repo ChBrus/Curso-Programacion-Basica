@@ -88,6 +88,11 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
+    if(vidasJugador == 0 && vidasEnemigo == 0) {
+        alert('Reinicia el juego para poder jugar otra vez 😁');
+        return;
+    }
+
     let spanVidasJugador = document.getElementById('vidas-jugador');
     let spanVidasEnemigo = document.getElementById('vidas-enemigo');
 
@@ -103,12 +108,27 @@ function combate() {
         vidasEnemigo--;
         spanVidasEnemigo.innerHTML = vidasEnemigo;
     }
+
+    // ¿Quién ganó?
+    if(vidasJugador == 0) {
+        crearMensajeFinal("Lo siento 😔 has perdido 😭😭😭");
+    } else if(vidasEnemigo == 0) {
+        crearMensajeFinal("!Felicitaciones, has ganado 🥳🎉🎈!");
+    }
 }
 
 function crearMensaje(resultado) {
     let mensajes = document.getElementById('mensajes');
     let parrafo = document.createElement('p');
     parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + '.\nLa mascota del enemigo atacó con ' + ataqueEnemigo + ".\n - " + resultado;
+
+    mensajes.appendChild(parrafo);
+}
+
+function crearMensajeFinal(resultadoFinal) {
+    let mensajes = document.getElementById('mensajes');
+    let parrafo = document.createElement('p');
+    parrafo.innerHTML = resultadoFinal;
 
     mensajes.appendChild(parrafo);
 }
