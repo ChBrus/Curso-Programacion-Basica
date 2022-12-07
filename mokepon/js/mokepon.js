@@ -1,4 +1,5 @@
 let ataqueJugador, ataqueEnemigo;
+let vidasJugador = 3, vidasEnemigo = 3;
 
 window.addEventListener('load', iniciarJuego);
 
@@ -87,16 +88,20 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
+    let spanVidasJugador = document.getElementById('vidas-jugador');
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo');
+
     if(ataqueEnemigo == ataqueJugador) {
         crearMensaje('EMPATE 🙀❗');
-    } else if(ataqueJugador == 'Fuego 🔥' && ataqueEnemigo == 'Tierra 🌻') {
+    } else if((ataqueJugador == 'Fuego 🔥' && ataqueEnemigo == 'Tierra 🌻') || (ataqueJugador == 'Agua 💧' && ataqueEnemigo == 'Fuego 🔥')
+            || ataqueJugador == 'Tierra 🌻' && ataqueEnemigo == 'Agua 💧') {
         crearMensaje('GANASTE 🥳🥳🎉');
-    } else if(ataqueJugador == 'Agua 💧' && ataqueEnemigo == 'Fuego 🔥') {
-        crearMensaje('GANASTE 🥳🥳🎉');
-    } else if(ataqueJugador == 'Tierra 🌻' && ataqueEnemigo == 'Agua 💧') {
-        crearMensaje('GANASTE 🥳🥳🎉');
+        vidasJugador--;
+        spanVidasJugador.innerHTML = vidasJugador;
     } else {
         crearMensaje('PERDISTE 😥🥀');
+        vidasEnemigo--;
+        spanVidasEnemigo.innerHTML = vidasEnemigo;
     }
 }
 
