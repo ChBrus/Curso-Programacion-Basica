@@ -13,6 +13,9 @@ function iniciarJuego() {
     botonAgua.addEventListener('click', ataqueAgua);
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.addEventListener('click', ataqueTierra);
+
+    let botonReiniciar = document.getElementById('boton-reiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego);
 }
 
 function seleccionarMascotaJugador() {
@@ -101,12 +104,12 @@ function combate() {
     } else if((ataqueJugador == 'Fuego 🔥' && ataqueEnemigo == 'Tierra 🌻') || (ataqueJugador == 'Agua 💧' && ataqueEnemigo == 'Fuego 🔥')
             || ataqueJugador == 'Tierra 🌻' && ataqueEnemigo == 'Agua 💧') {
         crearMensaje('GANASTE 🥳🥳🎉');
-        vidasJugador--;
-        spanVidasJugador.innerHTML = vidasJugador;
-    } else {
-        crearMensaje('PERDISTE 😥🥀');
         vidasEnemigo--;
         spanVidasEnemigo.innerHTML = vidasEnemigo;
+    } else {
+        crearMensaje('PERDISTE 😥🥀');
+        vidasJugador--;
+        spanVidasJugador.innerHTML = vidasJugador;
     }
 
     // ¿Quién ganó?
@@ -131,6 +134,17 @@ function crearMensajeFinal(resultadoFinal) {
     parrafo.innerHTML = resultadoFinal;
 
     mensajes.appendChild(parrafo);
+
+    let botonFuego = document.getElementById('boton-fuego');
+    botonFuego.disabled = true;
+    let botonAgua = document.getElementById('boton-agua');
+    botonAgua.disabled = true;
+    let botonTierra = document.getElementById('boton-tierra');
+    botonTierra.disabled = true;
+}
+
+function reiniciarJuego() {
+    location.reload();
 }
 
 function aleatorio(min, max) {
