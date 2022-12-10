@@ -1,6 +1,14 @@
+body {
+    text-align: center;
+}
+
 .titulo {
-    color: hotpink;
-    width: 310px;
-    height: 50px;
-    background-color: teal;
+    margin: 0 30% 0 30%;
+    padding: 5px;
+    color: rgb(255, 136, 196);
+    background: linear-gradient(teal, rgb(45, 194, 194));
+}
+
+#seleccionar-mascota {
+    display: inline-block;
 }
