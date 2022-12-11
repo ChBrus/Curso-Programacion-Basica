@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Poppins:wght@300&family=Zen+Dots&display=swap');
 
 body {
     /*font-family: 'Zen Dots', cursive;*/
@@ -40,6 +41,8 @@ body {
 }
 
 .tarjeta-de-mokepon {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -61,10 +64,14 @@ input {
 }
 
 button {
-    width: 150px;
-    height: 30px;
-    font-size: 15px;
-    background-color: rgb(255, 191, 166);
-    border: 3px dashed rgba(107, 53, 47, 0.411);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    width: 180px;
+    height: 40px;
+    margin: 10px;
+    color: #EEEEEE;
+    background-color: transparent;
+    border: 3px dashed #EEEEEE;
+    border-radius: 20px;
     box-sizing: border-box;
 }
