@@ -1,8 +1,15 @@
+body {
+    background: linear-gradient(-45deg, blue, lightpink, sandybrown) ;
+}
+
 .titulo {
+    text-align: center;
     margin: 0 30% 0 30%;
-    padding: 5px;
-    color: rgb(255, 136, 196);
-    background: linear-gradient(teal, rgb(45, 194, 194));
+    padding: 10px;
+    color: rgb(255, 136, 195);
+    border: 2px dashed teal;
+    border-radius: 30px;
+    background-color: rgb(164, 224, 224);
 }
 
 #seleccionar-mascota {
@@ -11,4 +18,27 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.tarjeta-de-mokepon {
+    width: 100px;
+    height: 100px;
+    background: aquamarine;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 2px solid hotpink;
+}
+
+input {
+    display: none;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgb(255, 191, 166);
+    border: 3px dashed rgba(107, 53, 47, 0.411);
+    box-sizing: border-box;
 }
