@@ -1,18 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&display=swap');
+
 body {
-    background: linear-gradient(-45deg, blue, lightpink, sandybrown) ;
+    /*font-family: 'Zen Dots', cursive;*/
+    font-family: 'Diplomata SC', cursive;
+    background: linear-gradient(-45deg, #34B3F1, #F15412) ;
 }
 
-.titulo {
-    text-align: center;
-    margin: 0 30% 0 30%;
-    padding: 10px;
-    color: rgb(255, 136, 195);
-    border: 2px dashed teal;
-    border-radius: 30px;
-    background-color: rgb(164, 224, 224);
-}
-
-#seleccionar-mascota {
+#seleccionar-mascota{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,14 +15,45 @@ body {
     height: 100vh;
 }
 
+#seleccionar-ataque{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.titulo {
+    color: #EEEEEE;
+    font-size: 80px;
+}
+
+.subtitulo {
+    color: #EEEEEE;
+    font-size: 28px;
+}
+
+
+.tarjetas {
+    display: flex;
+    gap: 12px;
+}
+
 .tarjeta-de-mokepon {
-    width: 100px;
-    height: 100px;
-    background: aquamarine;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 164px;
+    height: 144px;
+    background: #34B3F1;
     padding: 10px;
     box-sizing: border-box;
-    margin: 10px;
-    border: 2px solid hotpink;
+    border-radius: 20px;
+}
+
+.tarjeta-de-mokepon img {
+    width: 80px;
 }
 
 input {
