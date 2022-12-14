@@ -5,7 +5,7 @@
 body {
     /*font-family: 'Zen Dots', cursive;*/
     font-family: 'Diplomata SC', cursive;
-    background: linear-gradient(-45deg, #34B3F1, #F15412) ;
+    background: linear-gradient(-45deg, #3AB0FF, #FFB562) ;
 }
 
 #seleccionar-mascota{
@@ -25,12 +25,12 @@ body {
 }
 
 .titulo {
-    color: #EEEEEE;
+    color: #F9F2ED;
     font-size: 80px;
 }
 
 .subtitulo {
-    color: #EEEEEE;
+    color: #F9F2ED;
     font-size: 28px;
 }
 
@@ -49,7 +49,7 @@ body {
     justify-content: center;
     width: 164px;
     height: 144px;
-    background: #34B3F1;
+    background: #F87474;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
@@ -63,15 +63,26 @@ input {
     display: none;
 }
 
-button {
+#boton-mascota {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     width: 180px;
     height: 40px;
     margin: 10px;
-    color: #EEEEEE;
+    color: #F9F2ED;
     background-color: transparent;
-    border: 3px dashed #EEEEEE;
+    border: 3px dashed #F9F2ED;
     border-radius: 20px;
     box-sizing: border-box;
+}
+
+.boton-de-ataque {
+    width: 100px;
+    background-color: #F87474;
+    border-color: transparent;
+    color: #F9F2ED;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif; 
 }
