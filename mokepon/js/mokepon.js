@@ -25,11 +25,6 @@ function iniciarJuego() {
 }
 
 function seleccionarMascotaJugador() {
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
-    sectionSeleccionarAtaque.style.display = 'flex';
-    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota');
-    sectionSeleccionarMascota.style.display = 'none';
-
     let mascotas = document.getElementsByName('mascota');
     let nombreMascotaJugador = document.getElementById('mascota-jugador');
     let contador = 0;
@@ -47,7 +42,11 @@ function seleccionarMascotaJugador() {
         alert('Selecciona una mascota');
         return;
     }
-
+    
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+    sectionSeleccionarAtaque.style.display = 'flex';
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota');
+    sectionSeleccionarMascota.style.display = 'none';
     seleccionarMascotaEnemigo();
 }
 
@@ -102,7 +101,7 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
-    if(vidasJugador == 0 && vidasEnemigo == 0) {
+    if(vidasJugador == 0 || vidasEnemigo == 0) {
         alert('Reinicia el juego para poder jugar otra vez 😁');
         return;
     }
@@ -132,19 +131,25 @@ function combate() {
 }
 
 function crearMensaje(resultado) {
-    let mensajes = document.getElementById('mensajes');
-    let parrafo = document.createElement('p');
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + '.\nLa mascota del enemigo atacó con ' + ataqueEnemigo + ".\n - " + resultado;
+    let mensajes = document.getElementById('resultado');
+    let ataqueDelJugador = document.getElementById('ataque-del-jugador');
+    let ataqueDelEnemigo = document.getElementById('ataque-del-enemigo');
+    
+    let nuevoAtaqueDelJugador = document.createElement('p');
+    let nuevoAtaqueDelEnemigo = document.createElement('p');
 
-    mensajes.appendChild(parrafo);
+    mensajes.innerHTML = resultado;
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo;
+
+    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador);
+    ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
+    mensajes.style.animation = 'none';
 }
 
 function crearMensajeFinal(resultadoFinal) {
-    let mensajes = document.getElementById('mensajes');
-    let parrafo = document.createElement('p');
-    parrafo.innerHTML = resultadoFinal;
-
-    mensajes.appendChild(parrafo);
+    let mensajes = document.getElementById('resultado');
+    mensajes.innerHTML = resultadoFinal;
 
     let botonFuego = document.getElementById('boton-fuego');
     botonFuego.disabled = true;
@@ -154,7 +159,7 @@ function crearMensajeFinal(resultadoFinal) {
     botonTierra.disabled = true;
 
     let sectionReiniciar = document.getElementById('reiniciar');
-    sectionReiniciar.style.display = 'block';
+    sectionReiniciar.style.display = 'flex';
 }
 
 function reiniciarJuego() {

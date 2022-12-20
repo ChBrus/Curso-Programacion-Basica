@@ -37,6 +37,8 @@ body {
 
 .tarjetas {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
 }
 
@@ -51,8 +53,52 @@ body {
     height: 144px;
     background: #F87474;
     padding: 10px;
+    margin: 5px;
     box-sizing: border-box;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#mensajes {
+    width: 370px;
+    height: 100px;
+    color: #F9F2ED;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#resultado {
+    animation: burnitoGiro 1.5s infinite linear;
+}
+
+#boton-reiniciar {
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background-color: transparent;
+    color: #F9F2ED;
+}
+
+@keyframes burnitoGiro {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .tarjeta-de-mokepon img {
@@ -85,4 +131,30 @@ input {
     box-sizing: border-box;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif; 
+}
+
+input[type="radio"]:checked + .tarjeta-de-mokepon{
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color: #F9F2ED;
+    animation: movimiento 1s linear infinite;
+}
+
+@keyframes movimiento {
+    0%{
+        background-color: #F87474;
+    }
+    25%{
+        background-color: #f87474bb;
+    }
+    50%{
+        background-color: #f8747441;
+    }
+    75%{
+        background-color: #f87474bb;
+    }
+    100%{
+        background-color: #F87474;
+    }
 }
