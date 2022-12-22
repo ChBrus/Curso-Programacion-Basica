@@ -6,6 +6,7 @@ body {
     /*font-family: 'Zen Dots', cursive;*/
     font-family: 'Diplomata SC', cursive;
     background: linear-gradient(-45deg, #3AB0FF, #FFB562) ;
+    color: #F9F2ED;
 }
 
 #seleccionar-mascota{
@@ -13,7 +14,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #seleccionar-ataque{
@@ -21,7 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .titulo {
@@ -61,6 +62,21 @@ body {
     z-index: 1;
 }
 
+.jugadores {
+    display: grid;
+    grid-template-columns: 50% 10% 50%;
+    text-align: center;
+}
+
+.jugador {
+    border-radius: 10%;
+    border: 1px solid black;
+}
+
+.jugador_2 {
+    grid-column: 3 / 4;
+}
+
 #mensajes {
     width: 370px;
     height: 100px;
@@ -81,24 +97,6 @@ body {
     border: none;
     background-color: transparent;
     color: #F9F2ED;
-}
-
-@keyframes burnitoGiro {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(5deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(-5deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
 }
 
 .tarjeta-de-mokepon img {
@@ -133,15 +131,45 @@ input {
     font-family: 'Poppins', sans-serif; 
 }
 
+.boton-de-ataque:hover:not(.boton-de-ataque:disabled) {
+    animation: mov-btn-ataque 1s linear infinite;
+}
+
+.boton-de-ataque:disabled {
+    background-color: #F9F2ED;
+    color: black;
+}
+
 input[type="radio"]:checked + .tarjeta-de-mokepon{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    background-color: #F9F2ED;
-    animation: movimiento 1s linear infinite;
+    background-color: black;
 }
 
-@keyframes movimiento {
+input[type="radio"]:hover:not(input[type="radio"]:checked) + .tarjeta-de-mokepon{
+    animation: mov-tarjetas 1s linear infinite;
+}
+
+@keyframes burnitoGiro {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes mov-tarjetas {
     0%{
         background-color: #F87474;
     }
@@ -156,5 +184,20 @@ input[type="radio"]:checked + .tarjeta-de-mokepon{
     }
     100%{
         background-color: #F87474;
+    }
+}
+
+@keyframes mov-btn-ataque {
+    0%{
+        background-color: #F87474;
+        color: #F9F2ED;
+    }
+    50%{
+        background-color: #F9F2ED;
+        color: black;
+    }
+    100%{
+        background-color: #F87474;
+        color: #F9F2ED;
     }
 }
